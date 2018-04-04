@@ -1,0 +1,44 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<!-- load fontawesome -->
+	<style>
+		body {
+			padding-top: 80px;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Login page</h1>
+
+	<form action="login" method="post">
+		<p>Username: </p>
+		<input type="text" name="username">
+		<p>Password: </p>
+		<input type="password" name="password">
+
+		<button type="submit">Login</button>
+	</form>
+
+	<h2>Create new login</h2>
+	<form action="create" method="post">
+		<p>Username: </p>
+		<input type="text" name="username">
+		<p>Password: </p>
+		<input type="text" name="password" pattern="(?=.{9,})(?=.*?[^\w\s])(?=.*?[0-9])(?=.*?[A-Z]).*?[a-z].*"
+		title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+		<button type="submit">Create</button>
+	</form>
+
+</body>
+
+</html>
